@@ -43,7 +43,7 @@ public class Utils {
         }
     }
 
-    public void ingresarRepuesto(){
+    public Stack<Repuestos> ingresarRepuesto(){
         Stack<Repuestos> repuestos = new Stack<Repuestos>();
         Repuestos repuesto = new Repuestos();
         Scanner sc = new Scanner(System.in);
@@ -62,6 +62,29 @@ public class Utils {
         repuesto.setReferencia(sc.nextLine());
 
         repuestos.push(repuesto);
+
+        return repuestos;
     }
+
+    public void buscarRepuesto(Stack<Repuestos> repuestos){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese la opcion por la que desea buscar: 1.Marca 2.Referencia");
+        int opcion = sc.nextInt();
+        sc.nextLine();
+        switch (opcion) {
+            case 1:
+                System.out.println("Ingrese la marca del repuesto: ");
+                String marcaABuscar = sc.nextLine();
+                
+                break;
+            case 2: 
+                System.out.println("Opcion 2");
+                break;
+            default:
+                throw new AssertionError();
+        }
+    }
+
+    
 
 }
