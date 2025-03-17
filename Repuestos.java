@@ -42,7 +42,7 @@ public class Repuestos {
         return this.referencia;
     }
 
-    public void marca(String referencia){
+    public void setReferencia(String referencia){
         this.referencia = referencia;
     }
 
