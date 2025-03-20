@@ -72,22 +72,43 @@ public class Utils {
         
     }
 
-    public void consultarPrenda(Stack<Prenda> prenda) {
+    public void consultarPrenda(Stack<Prenda> prendas) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingresa la opcion que desea realizar: 1. Buscar por marca 2. Buscar por referencia");
         int opcion = sc.nextInt();
 
         switch (opcion) {
             case 1:
-                
+                System.out.println("Ingrese la marca que desea consultar: ");
+                String marca = sc.nextLine();
+                Prenda prendaSeleccionada = prendas.peek();
+                for(Prenda prenda : prendas){
+                    if(prenda.getMarca().equalsIgnoreCase(marca)){
+                        prendaSeleccionada = prenda;
+                    }
+                }
+                System.out.println("La prenda que selecciono es: " );
+                System.out.println("Marca: " + prendaSeleccionada.getMarca() + " Referencia: " + prendaSeleccionada.getReferencia() + " Precio: " + prendaSeleccionada.getPrecio() + " Cantidad: " + prendaSeleccionada.getCantidad());
                 break;
             case 2:
+                System.out.println("Ingrese la referencia que desea consultar: ");
+                String refencia = sc.nextLine();
+                Prenda prendaSeleccionadaRef = prendas.peek();
 
+                for(Prenda prenda : prendas){
+                    if(prenda.getReferencia().equalsIgnoreCase(refencia));
+                    prendaSeleccionada = prenda;
+                }
+
+                System.out.println("La prenda que selecciono es: " );
+                System.out.println("Marca: " + prendaSeleccionadaRef.getMarca() + " Referencia: " + prendaSeleccionadaRef.getReferencia() + " Precio: " + prendaSeleccionadaRef.getPrecio() + " Cantidad: " + prendaSeleccionadaRef.getCantidad());
                 break;
             default:
-                System.out.println("Respuesta inconrrecta ingresa una de las dos opciones");
+                System.out.println("Respuesta incorrecta ingresa una de las dos opciones");
                 break;
         }
+
+        
 
     }
 
