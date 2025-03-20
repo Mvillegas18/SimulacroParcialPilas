@@ -41,6 +41,7 @@ public class Utils {
                     break;
             }
         }
+        sc.close();
     }
 
     public Stack<Prenda> ingresarRepuesto(){
@@ -89,6 +90,7 @@ public class Utils {
                 }
                 System.out.println("La prenda que selecciono es: " );
                 System.out.println("Marca: " + prendaSeleccionada.getMarca() + " Referencia: " + prendaSeleccionada.getReferencia() + " Precio: " + prendaSeleccionada.getPrecio() + " Cantidad: " + prendaSeleccionada.getCantidad());
+                sc.close();
                 break;
             case 2:
                 System.out.println("Ingrese la referencia que desea consultar: ");
@@ -108,7 +110,7 @@ public class Utils {
                 break;
         }
 
-        
+
 
     }
 
