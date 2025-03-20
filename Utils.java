@@ -43,46 +43,52 @@ public class Utils {
         }
     }
 
-    public Stack<Repuestos> ingresarRepuesto(){
-        Stack<Repuestos> repuestos = new Stack<Repuestos>();
-        Repuestos repuesto = new Repuestos();
+    public Stack<Prenda> ingresarRepuesto(){
+        Stack<Prenda> prendaPila = new Stack<Prenda>();
+        Prenda prenda = new Prenda();
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Ingrese la marca del repuesto: ");
-        repuesto.setMarca(sc.nextLine());
+        System.out.print("Ingrese la marca: ");
+        prenda.setMarca(sc.nextLine().toLowerCase());
 
-        System.out.println("Ingrese el precio del repuesto: ");
-        repuesto.setPrecio(sc.nextDouble());
+        System.out.print("Ingrese la referencia: ");
+        prenda.setReferencia(sc.nextLine().toLowerCase());
 
-        System.out.println("Ingrese la cantidad del repuesto: ");
-        repuesto.setCantidad(sc.nextInt());
+        System.out.print("Ingrese el precio: ");
+        prenda.setPrecio(sc.nextDouble());
         sc.nextLine();
 
-        System.out.println("Ingrese la referencia del repuesto: ");
-        repuesto.setReferencia(sc.nextLine());
+        System.out.print("Ingrese la cantidad: ");
+        prenda.setCantidad(sc.nextInt());
 
-        repuestos.push(repuesto);
+        prendaPila.push(prenda);
 
-        return repuestos;
+        System.out.println("Prenda guardada con exito.");
+
+        sc.close();
+
+        return prendaPila;
+
+        
     }
 
-    public void buscarRepuesto(Stack<Repuestos> repuestos){
+    public void consultarPrenda(Stack<Prenda> prenda) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese la opcion por la que desea buscar: 1.Marca 2.Referencia");
+        System.out.println("Ingresa la opcion que desea realizar: 1. Buscar por marca 2. Buscar por referencia");
         int opcion = sc.nextInt();
-        sc.nextLine();
+
         switch (opcion) {
             case 1:
-                System.out.println("Ingrese la marca del repuesto: ");
-                String marcaABuscar = sc.nextLine();
                 
                 break;
-            case 2: 
-                System.out.println("Opcion 2");
+            case 2:
+
                 break;
             default:
-                throw new AssertionError();
+                System.out.println("Respuesta inconrrecta ingresa una de las dos opciones");
+                break;
         }
+
     }
 
     
